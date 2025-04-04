@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumpscare</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        #jumpscare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://link-to-your-scary-image.jpg') no-repeat center center;
+            background-size: cover;
+            display: none;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="jumpscare"></div>
+    <audio id="scary-audio" src="https://link-to-your-scary-sound.mp3" preload="auto"></audio>
+
+    <script>
+        // Delay 3 giây rồi kích hoạt jumpscare
+        setTimeout(function() {
+            document.getElementById('jumpscare').style.display = 'block';
+            document.getElementById('scary-audio').play();
+        }, 3000); // Jumpscare sẽ xuất hiện sau 3 giây
+    </script>
+</body>
+</html>
